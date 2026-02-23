@@ -437,7 +437,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-12 flex flex-col items-center gap-4"
+            className="flex flex-col items-center gap-4 mt-8 md:mt-16"
           >
             <span className="text-sm text-white/40 font-mono tracking-widest uppercase">Explore a Oportunidade</span>
             <motion.div
