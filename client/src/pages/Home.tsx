@@ -1,14 +1,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { 
-  Building2, 
-  CarFront, 
-  Users, 
-  Repeat, 
-  Target, 
-  TrendingUp, 
-  ShieldCheck, 
-  Briefcase, 
+import {
+  Building2,
+  CarFront,
+  Users,
+  Repeat,
+  Target,
+  TrendingUp,
+  ShieldCheck,
+  Briefcase,
   Award,
   ArrowRight,
   ChevronDown,
@@ -33,19 +33,19 @@ const slides = [
   },
   {
     id: 2,
-    title: "O Problema de Mercado",
+    title: "Comportamento Financeiro Pós-Compra",
     subtitle: "Comportamento do comprador de veículos",
-    content: "A relação do cliente com o carro não termina na compra. Após adquirir o veículo, surgem novas necessidades: crédito, refinanciamento, upgrade, serviços, proteção, benefícios.",
-    highlight: "Banco entende imediatamente isso.",
+    content: "A relação financeira do cliente com o veículo não se encerra na compra. Após a aquisição, surgem novas demandas naturais: crédito, refinanciamento, upgrade, proteção e serviços.",
+    highlight: "A compra do carro é apenas o primeiro evento financeiro do cliente.",
     icon: CarFront,
     bg: darkBg
   },
   {
     id: 3,
-    title: "A Solução",
-    subtitle: "Clube de Benefício ASI",
-    content: "O Clube de Benefício ASI é uma plataforma de relacionamento destinada exclusivamente a clientes que já compraram veículos dentro do Auto Shopping Itapoan.",
-    highlight: "Ponto crítico: enfatizar clientes convertidos, não leads.",
+    title: "Plataforma Clube de Benefício ASI",
+    subtitle: "A Solução",
+    content: "O Clube de Benefício ASI é uma plataforma de relacionamento estruturada para clientes que já realizaram a compra de veículos dentro do Auto Shopping Itapoan, permitindo ativação contínua, comunicação recorrente e geração de oportunidades ao longo do ciclo de vida do proprietário.",
+    highlight: "A plataforma transforma compradores em uma base ativa de relacionamento financeiro.",
     icon: Users,
     bg: darkBg,
     isASI: true
@@ -55,13 +55,13 @@ const slides = [
     title: "Lógica da Ferramenta",
     subtitle: "Como o sistema funciona",
     list: [
-      "Cliente compra veículo no shopping",
-      "Cliente recebe acesso ao clube",
-      "Cliente ativa benefícios e vantagens",
-      "Plataforma mantém relacionamento contínuo",
-      "Base se torna economicamente ativável"
+      "Cliente adquire veículo no Auto Shopping",
+      "Cliente é incorporado à base do clube",
+      "Plataforma estabelece canal de relacionamento contínuo",
+      "Base passa a ser ativa e rastreável",
+      "Oportunidades financeiras podem ser ativadas ao longo do tempo"
     ],
-    highlight: "Aqui você posiciona como infraestrutura, não marketing.",
+    highlight: "O clube transforma um evento de venda em um canal recorrente de relacionamento.",
     icon: Repeat,
     bg: darkBg,
     isASI: true
@@ -70,8 +70,8 @@ const slides = [
     id: 5,
     title: "O Ativo Mais Valioso",
     subtitle: "O que realmente existe no projeto",
-    content: "Estamos falando de uma base composta por proprietários de veículos, com histórico de compra recente e alto potencial de consumo financeiro ao longo do tempo.",
-    highlight: "Essa frase é extremamente forte para banco.",
+    content: "O Clube de Benefício ASI consolida uma base composta por proprietários de veículos, com histórico de compra validado e comportamento financeiro naturalmente recorrente ao longo do tempo.",
+    highlight: "A base do clube equivale a uma carteira contínua de oportunidades financeiras.",
     icon: Target,
     bg: financeBg,
     isASI: true
@@ -80,119 +80,152 @@ const slides = [
     id: 6,
     title: "Ciclo Financeiro",
     subtitle: "Raciocínio que banco adora",
-    content: "Um proprietário de veículo naturalmente passa por:",
+    content: "O proprietário de veículo naturalmente transita por múltiplos eventos financeiros ao longo do tempo:",
     list: [
       "Financiamento ou refinanciamento",
-      "Upgrade de carro",
-      "Crédito com garantia",
-      "Seguros e serviços",
-      "Novas aquisições"
+      "Crédito com garantia do veículo",
+      "Substituição / renovação de veículo",
+      "Seguros e serviços financeiros",
+      "Novos eventos de crédito"
     ],
-    highlight: "👉 comprador de carro = cliente financeiro recorrente",
+    highlight: "Cada proprietário de veículo representa um ciclo contínuo de oportunidades financeiras.",
     icon: TrendingUp,
     bg: darkBg
   },
   {
     id: 7,
     title: "Papel Estratégico",
-    subtitle: "Onde a ferramenta ganha poder",
-    content: "O clube permite ativar o cliente após a compra, mantendo vínculo com o shopping e criando oportunidades contínuas de negócios.",
-    highlight: "Banco enxerga retenção + recorrência.",
+    subtitle: "Valor Estratégico do Clube",
+    content: "O Clube de Benefício ASI estrutura um canal permanente de relacionamento com clientes pós-compra, permitindo reativação recorrente, previsibilidade de acesso e geração contínua de oportunidades financeiras.",
+    highlight: "A plataforma converte um evento de venda em um ativo de longo prazo.",
     icon: ShieldCheck,
     bg: darkBg,
     isASI: true
   },
   {
     id: 8,
+    title: "Escala Comercial do Auto Shopping Itapoan",
+    subtitle: "Volume e Previsibilidade",
+    content: "Formação contínua de carteira qualificada, recorrente e previsível para instituição financeira exclusiva.",
+    list: [
+      "Operação média mensal (fluxo regular): 400 veículos / mês",
+      "Operação média em períodos de feirão: 700 veículos / mês",
+      "Volume médio anual de vendas: 8.960 veículos / ano",
+      "Geração anual de novos proprietários: 8.960 clientes / ano",
+      "Base potencial em 12 meses: 8.960 clientes ativos"
+    ],
+    highlight: "Cada veículo vendido representa um novo ativo financeiro em potencial.",
+    icon: TrendingUp,
+    bg: financeBg,
+    isASI: true
+  },
+  {
+    id: 9,
     title: "A Oportunidade",
     subtitle: "Para o Banco BV",
-    content: "O Banco BV não entra como anunciante. Entra como instituição associada a uma base qualificada de proprietários de veículos.",
-    highlight: "Isso muda completamente a percepção de investimento.",
+    content: "O Banco BV não participa como anunciante, mas como instituição associada a uma base qualificada de proprietários de veículos, com potencial recorrente de operações financeiras.",
+    highlight: "O valor da parceria não está na exposição da marca, mas na previsibilidade de acesso ao cliente.",
     icon: Briefcase,
     bg: financeBg,
     isBV: true
   },
   {
-    id: 9,
-    title: "Benefícios Diretos",
+    id: 10,
+    title: "Benefícios Diretos ao Banco BV",
     subtitle: "O que o BV ganha",
     list: [
-      "Presença permanente na jornada do cliente",
-      "Associação institucional ao clube",
-      "Canal de ativação de produtos financeiros",
-      "Redução de custo de aquisição",
-      "Relacionamento de longo prazo"
+      "Exclusividade financeira dentro do Clube de Benefício ASI",
+      "Presença institucional permanente na base de clientes",
+      "Canal estruturado de ativação de produtos financeiros",
+      "Possibilidade de campanhas e ofertas direcionadas",
+      "Mecanismo de incentivo direto à originação de contratos"
     ],
-    highlight: "Banco pensa em CAC imediatamente.",
+    highlight: "O BV não concorre dentro da plataforma. Opera como instituição financeira exclusiva do ecossistema.",
     icon: TrendingUp,
     bg: darkBg,
     isBV: true
   },
   {
-    id: 10,
+    id: 11,
     title: "Branding Estratégico",
-    subtitle: "Integração à experiência",
-    content: "A marca BV estará presente nos principais pontos de contato do programa:",
+    subtitle: "Presença Institucional do Banco BV",
+    content: "A marca BV estará integrada aos principais ativos do programa:",
     list: [
       "Cartão físico do Clube de Benefício ASI",
-      "Plataforma digital / site",
-      "Comunicação do programa"
+      "Plataforma digital do clube",
+      "Comunicação institucional e promocional do programa"
     ],
-    highlight: "Você não está vendendo banner. Você está vendendo integração à experiência do cliente.",
+    highlight: "A marca BV passa a fazer parte da estrutura do relacionamento, não apenas da comunicação.",
     icon: Award,
-    bg: darkBg,
-    isBV: true
-  },
-  {
-    id: 11,
-    title: "Diferença Competitiva",
-    subtitle: "Argumento de diretoria",
-    content: "Enquanto outras instituições disputam o cliente apenas no momento da compra, o BV passa a se relacionar com ele durante toda a vida útil do veículo.",
-    highlight: "Relacionamento contínuo vs. Transação pontual",
-    icon: ShieldCheck,
     bg: darkBg,
     isBV: true
   },
   {
     id: 12,
-    title: "Lógica Econômica",
-    subtitle: "Retorno indireto",
-    content: "O fluxo de valor é claro e contínuo:",
-    highlight: "Base ativa → campanhas BV → produtos financeiros → operações",
-    icon: Repeat,
+    title: "Diferença Competitiva",
+    subtitle: "Argumento de diretoria",
+    content: "Enquanto outras instituições atuam apenas no momento da transação, o Banco BV passa a integrar um modelo de relacionamento contínuo com o cliente ao longo de toda a vida útil do veículo.",
+    highlight: "O Banco BV deixa de disputar transações e passa a construir ciclo de relacionamento.",
+    icon: ShieldCheck,
     bg: darkBg,
     isBV: true
   },
   {
     id: 13,
-    title: "Exclusividade",
-    subtitle: "Posicionamento premium",
+    title: "Lógica Econômica do Modelo",
+    subtitle: "Retorno indireto",
+    content: "O Clube de Benefício ASI consolida uma base proprietária de clientes pós-compra, permitindo ao Banco BV acesso recorrente a um público com histórico de crédito e múltiplos gatilhos financeiros ao longo do tempo.",
     list: [
-      "BV como banco associado ao Clube ASI",
-      "Destaque institucional dentro do shopping",
-      "Associação a benefícios reais"
+      "Cliente compra veículo → entra no clube",
+      "Cliente permanece ativo na base",
+      "BV ativa ofertas direcionadas",
+      "Ofertas geram novos eventos de crédito",
+      "Eventos geram operações financeiras"
     ],
-    highlight: "Banco valoriza território exclusivo.",
-    icon: Award,
+    highlight: "Cada membro do clube representa um potencial evento financeiro futuro.",
+    icon: Repeat,
     bg: darkBg,
     isBV: true
   },
   {
     id: 14,
-    title: "Visão de Futuro",
-    subtitle: "A decisão lógica",
-    content: "O cliente já comprou o veículo. Já tem relacionamento com crédito. Já possui um ativo financiável. A única variável passa a ser:",
-    highlight: "Qual banco estará presente de forma contínua nessa jornada?",
+    title: "Exclusividade",
+    subtitle: "Exclusividade Institucional do Banco BV",
+    content: "Banco BV passa a operar como instituição exclusiva do programa:",
+    list: [
+      "BV como banco associado ao Clube de Benefício ASI",
+      "Exclusividade no segmento financeiro dentro da plataforma",
+      "Presença institucional nas mídias internas do shopping",
+      "Destaque permanente nos pontos de contato com o público",
+      "Associação direta à estrutura do ecossistema ASI"
+    ],
+    highlight: "A presença do BV deixa de ser pontual e passa a ser estrutural.",
+    icon: Award,
+    bg: darkBg,
+    isBV: true
+  },
+  {
+    id: 15,
+    title: "Captura do Ciclo Financeiro do Cliente",
+    subtitle: "A variável estratégica",
+    content: "O cliente já passou pela etapa mais valiosa para o banco:",
+    list: [
+      "Já adquiriu um veículo",
+      "Já possui um ativo financiável",
+      "Já demonstra histórico de crédito e consumo",
+      "Já está inserido em um ecossistema ativo"
+    ],
+    highlight: "O custo de aquisição já foi pago. Agora o jogo é retenção e recorrência.",
     icon: Target,
     bg: financeBg,
     isBV: true
   },
   {
-    id: 15,
+    id: 16,
     title: "Próximos Passos",
     subtitle: "Encerramento e Parceria",
-    content: "Estamos prontos para integrar a excelência do Banco BV ao ecossistema de alta conversão do Clube ASI.",
-    highlight: "Vamos transformar a jornada do proprietário de veículo em um ativo financeiro perpétuo.",
+    content: "O Clube de Benefício ASI está estruturado para operar com um banco exclusivo.",
+    highlight: "O Banco BV quer apenas financiar operações… ou dominar um ecossistema de clientes ativos?",
     icon: Handshake,
     bg: shoppingImg,
     isClosing: true
@@ -215,32 +248,32 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
   const isASI = data.isASI;
 
   return (
-    <section 
-      ref={ref} 
+    <section
+      ref={ref}
       className="relative min-h-screen flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0"
         style={{ y, opacity: 0.4 }}
       >
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${data.bg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A] opacity-90" />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         style={{ opacity, scale }}
         className="relative z-10 w-full max-w-5xl mx-auto"
       >
         <div className="flex flex-col md:flex-row gap-12 items-start md:items-center">
-          
+
           <div className="flex flex-col items-start gap-6 w-full md:w-1/3">
             <div className={`text-sm font-mono tracking-widest uppercase py-1 px-3 rounded-full border ${isBV ? 'border-[#3ED1F4] text-[#3ED1F4] bg-[#3ED1F4]/10' : isASI ? 'border-[#E30613] text-[#E30613] bg-[#E30613]/10' : 'border-white/20 text-white/60 bg-white/5'}`}>
               {index + 1} / {total}
             </div>
-            
+
             <div className={`p-5 rounded-2xl ${isBV ? 'bg-[#233CC7]/20 text-[#3ED1F4]' : isASI ? 'bg-[#E30613]/20 text-[#E30613]' : 'glass-panel text-white/80'}`}>
               <Icon size={48} strokeWidth={1.5} />
             </div>
@@ -255,7 +288,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
 
           <div className="flex flex-col gap-6 w-full md:w-2/3">
             <div>
-              <motion.h3 
+              <motion.h3
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -263,7 +296,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
               >
                 {data.subtitle}
               </motion.h3>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -274,7 +307,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
             </div>
 
             {data.content && (
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -285,7 +318,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
             )}
 
             {data.list && (
-              <motion.ul 
+              <motion.ul
                 initial="hidden"
                 whileInView="visible"
                 variants={{
@@ -295,7 +328,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
                 className="flex flex-col gap-4 mt-4"
               >
                 {data.list.map((item: string, i: number) => (
-                  <motion.li 
+                  <motion.li
                     key={i}
                     variants={{
                       hidden: { opacity: 0, x: -20 },
@@ -311,7 +344,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
             )}
 
             {data.highlight && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -328,7 +361,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
       </motion.div>
 
       {index < total - 1 && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: [0.2, 1, 0.2] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -347,20 +380,20 @@ export default function Home() {
 
   return (
     <main className="bg-[#0A0A0A] min-h-screen text-white selection:bg-[#233CC7] selection:text-white font-sans">
-      
-      <motion.div 
+
+      <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E30613] to-[#233CC7] origin-left z-50"
         style={{ scaleX }}
       />
 
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 0.6, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 z-0"
         >
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${shoppingImg})` }}
           />
@@ -375,23 +408,23 @@ export default function Home() {
             className="mb-8"
           >
             <div className="flex items-center justify-center gap-6 mb-12">
-              <motion.img 
+              <motion.img
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                src={logoASI} alt="Logo ASI" className="h-16 md:h-24 w-auto drop-shadow-2xl" 
+                src={logoASI} alt="Logo ASI" className="h-16 md:h-24 w-auto drop-shadow-2xl"
               />
               <div className="h-12 w-[1px] bg-white/20" />
-              <motion.img 
+              <motion.img
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                src={logoBV} alt="Logo BV" className="h-12 md:h-16 w-auto drop-shadow-2xl mt-2" 
+                src={logoBV} alt="Logo BV" className="h-12 md:h-16 w-auto drop-shadow-2xl mt-2"
               />
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
-              <span className="text-gradient-asi">Clube de Benefício ASI</span> <br/>
+              <span className="text-gradient-asi">Clube de Benefício ASI</span> <br />
               <span className="text-white">Proposta de Parceria Estratégica – </span>
               <span className="text-gradient-bv">Banco BV</span>
             </h1>
