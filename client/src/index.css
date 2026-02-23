@@ -42,24 +42,27 @@
   --popover: 0 0% 8%;
   --popover-foreground: 0 0% 98%;
 
-  --primary: 45 91% 49%;
-  --primary-foreground: 0 0% 9%;
+  /* BV Blue: #233CC7 (approx 231 70% 46%) */
+  --primary: 231 70% 46%;
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 0 0% 98%;
+  /* ASI Red: #E30613 (approx 357 95% 45%) */
+  --secondary: 357 95% 45%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* BV Light Blue: #3ED1F4 (approx 191 89% 60%) */
+  --accent: 191 89% 60%;
+  --accent-foreground: 0 0% 9%;
 
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 65%;
-
-  --accent: 0 0% 15%;
-  --accent-foreground: 0 0% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
   --border: 0 0% 15%;
   --input: 0 0% 15%;
-  --ring: 45 91% 49%;
+  --ring: 231 70% 46%;
 
   --radius: 0.5rem;
 }
@@ -77,7 +80,6 @@
   }
 }
 
-/* Custom Utilities for presentation */
 .glass-panel {
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(16px);
@@ -92,14 +94,20 @@
   background-clip: text;
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+.text-gradient-bv {
+  background: linear-gradient(135deg, #233CC7 0%, #3ED1F4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Hide scrollbar for cleaner look */
+.text-gradient-asi {
+  background: linear-gradient(135deg, #E30613 0%, #FF4D4D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

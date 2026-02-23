@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
 import { 
   Building2, 
   CarFront, 
@@ -11,13 +11,16 @@ import {
   Briefcase, 
   Award,
   ArrowRight,
-  ChevronDown
+  ChevronDown,
+  Handshake
 } from "lucide-react";
 
 import financeBg from "@/assets/images/finance-abstract.png";
 import darkBg from "@/assets/images/dark-bg.png";
+import logoBV from "@assets/image_1771867850507.png";
+import logoASI from "@assets/Gemini_Generated_Image_d8xhdrd8xhdrd8xh-Photoroom_1771868393946.png";
+import shoppingImg from "@assets/image_1771868431508.png";
 
-// --- Data Structure for Slides ---
 const slides = [
   {
     id: 1,
@@ -26,7 +29,7 @@ const slides = [
     content: "O Auto Shopping Itapoan não é apenas um ponto de venda. É um ambiente que concentra fluxo constante de compradores e proprietários de veículos, criando um ciclo contínuo de oportunidades comerciais e financeiras.",
     highlight: "Aqui você ancora autoridade e escala.",
     icon: Building2,
-    bg: financeBg
+    bg: shoppingImg
   },
   {
     id: 2,
@@ -44,7 +47,8 @@ const slides = [
     content: "O Clube de Benefício ASI é uma plataforma de relacionamento destinada exclusivamente a clientes que já compraram veículos dentro do Auto Shopping Itapoan.",
     highlight: "Ponto crítico: enfatizar clientes convertidos, não leads.",
     icon: Users,
-    bg: darkBg
+    bg: darkBg,
+    isASI: true
   },
   {
     id: 4,
@@ -59,7 +63,8 @@ const slides = [
     ],
     highlight: "Aqui você posiciona como infraestrutura, não marketing.",
     icon: Repeat,
-    bg: darkBg
+    bg: darkBg,
+    isASI: true
   },
   {
     id: 5,
@@ -68,7 +73,8 @@ const slides = [
     content: "Estamos falando de uma base composta por proprietários de veículos, com histórico de compra recente e alto potencial de consumo financeiro ao longo do tempo.",
     highlight: "Essa frase é extremamente forte para banco.",
     icon: Target,
-    bg: financeBg
+    bg: financeBg,
+    isASI: true
   },
   {
     id: 6,
@@ -93,7 +99,8 @@ const slides = [
     content: "O clube permite ativar o cliente após a compra, mantendo vínculo com o shopping e criando oportunidades contínuas de negócios.",
     highlight: "Banco enxerga retenção + recorrência.",
     icon: ShieldCheck,
-    bg: darkBg
+    bg: darkBg,
+    isASI: true
   },
   {
     id: 8,
@@ -178,12 +185,19 @@ const slides = [
     highlight: "Qual banco estará presente de forma contínua nessa jornada?",
     icon: Target,
     bg: financeBg,
-    isBV: true,
+    isBV: true
+  },
+  {
+    id: 15,
+    title: "Próximos Passos",
+    subtitle: "Encerramento e Parceria",
+    content: "Estamos prontos para integrar a excelência do Banco BV ao ecossistema de alta conversão do Clube ASI.",
+    highlight: "Vamos transformar a jornada do proprietário de veículo em um ativo financeiro perpétuo.",
+    icon: Handshake,
+    bg: shoppingImg,
     isClosing: true
   }
 ];
-
-// --- Components ---
 
 const Slide = ({ data, index, total }: { data: any, index: number, total: number }) => {
   const ref = useRef(null);
@@ -197,13 +211,14 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
 
   const Icon = data.icon;
+  const isBV = data.isBV;
+  const isASI = data.isASI;
 
   return (
     <section 
       ref={ref} 
       className="relative min-h-screen flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
-      {/* Background Image with Parallax & Overlay */}
       <motion.div 
         className="absolute inset-0 z-0"
         style={{ y, opacity: 0.4 }}
@@ -212,39 +227,39 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${data.bg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A] opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A] opacity-90" />
       </motion.div>
 
-      {/* Content */}
       <motion.div 
         style={{ opacity, scale }}
         className="relative z-10 w-full max-w-5xl mx-auto"
       >
         <div className="flex flex-col md:flex-row gap-12 items-start md:items-center">
           
-          {/* Left Column: Number & Icon */}
           <div className="flex flex-col items-start gap-6 w-full md:w-1/3">
-            <div className={`text-sm font-mono tracking-widest uppercase py-1 px-3 rounded-full border ${data.isBV ? 'border-[#F0B90B] text-[#F0B90B] bg-[#F0B90B]/10' : 'border-white/20 text-white/60 bg-white/5'}`}>
+            <div className={`text-sm font-mono tracking-widest uppercase py-1 px-3 rounded-full border ${isBV ? 'border-[#3ED1F4] text-[#3ED1F4] bg-[#3ED1F4]/10' : isASI ? 'border-[#E30613] text-[#E30613] bg-[#E30613]/10' : 'border-white/20 text-white/60 bg-white/5'}`}>
               {index + 1} / {total}
             </div>
             
-            <div className={`p-5 rounded-2xl ${data.isBV ? 'bg-[#F0B90B]/10 text-[#F0B90B]' : 'glass-panel text-white/80'}`}>
+            <div className={`p-5 rounded-2xl ${isBV ? 'bg-[#233CC7]/20 text-[#3ED1F4]' : isASI ? 'bg-[#E30613]/20 text-[#E30613]' : 'glass-panel text-white/80'}`}>
               <Icon size={48} strokeWidth={1.5} />
             </div>
 
             {data.isClosing && (
-              <div className="hidden md:block w-32 h-1 bg-[#F0B90B] mt-8" />
+              <div className="flex gap-4 mt-8">
+                <img src={logoASI} alt="ASI" className="h-12 w-auto" />
+                <img src={logoBV} alt="BV" className="h-10 w-auto mt-1" />
+              </div>
             )}
           </div>
 
-          {/* Right Column: Copy */}
           <div className="flex flex-col gap-6 w-full md:w-2/3">
             <div>
               <motion.h3 
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className={`text-xl md:text-2xl font-medium mb-2 ${data.isBV ? 'text-[#F0B90B]' : 'text-white/60'}`}
+                className={`text-xl md:text-2xl font-medium mb-2 ${isBV ? 'text-[#3ED1F4]' : isASI ? 'text-[#E30613]' : 'text-white/60'}`}
               >
                 {data.subtitle}
               </motion.h3>
@@ -288,7 +303,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
                     }}
                     className="flex items-start gap-4 text-lg md:text-xl text-white/90"
                   >
-                    <ArrowRight className={`mt-1 flex-shrink-0 ${data.isBV ? 'text-[#F0B90B]' : 'text-white/40'}`} size={20} />
+                    <ArrowRight className={`mt-1 flex-shrink-0 ${isBV ? 'text-[#3ED1F4]' : isASI ? 'text-[#E30613]' : 'text-white/40'}`} size={20} />
                     <span>{item}</span>
                   </motion.li>
                 ))}
@@ -300,9 +315,9 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className={`mt-8 p-6 md:p-8 rounded-2xl border-l-4 ${data.isBV ? 'border-[#F0B90B] bg-[#F0B90B]/5' : 'border-white/40 glass-panel'} relative overflow-hidden`}
+                className={`mt-8 p-6 md:p-8 rounded-2xl border-l-4 ${isBV ? 'border-[#3ED1F4] bg-[#233CC7]/10' : isASI ? 'border-[#E30613] bg-[#E30613]/10' : 'border-white/40 glass-panel'} relative overflow-hidden`}
               >
-                <div className={`text-xl md:text-2xl font-medium leading-relaxed ${data.isBV ? 'text-gradient-gold' : 'text-gradient'}`}>
+                <div className={`text-xl md:text-2xl font-medium leading-relaxed ${isBV ? 'text-gradient-bv' : isASI ? 'text-gradient-asi' : 'text-gradient'}`}>
                   "{data.highlight}"
                 </div>
               </motion.div>
@@ -312,8 +327,7 @@ const Slide = ({ data, index, total }: { data: any, index: number, total: number
         </div>
       </motion.div>
 
-      {/* Scroll Indicator (except last slide) */}
-      {!data.isClosing && (
+      {index < total - 1 && (
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: [0.2, 1, 0.2] }}
@@ -332,15 +346,13 @@ export default function Home() {
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <main className="bg-[#0A0A0A] min-h-screen text-white selection:bg-[#F0B90B] selection:text-black font-sans">
+    <main className="bg-[#0A0A0A] min-h-screen text-white selection:bg-[#233CC7] selection:text-white font-sans">
       
-      {/* Global Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-[#F0B90B] origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E30613] to-[#233CC7] origin-left z-50"
         style={{ scaleX }}
       />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
         <motion.div 
           initial={{ opacity: 0, scale: 1.1 }}
@@ -350,7 +362,7 @@ export default function Home() {
         >
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${financeBg})` }}
+            style={{ backgroundImage: `url(${shoppingImg})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />
         </motion.div>
@@ -362,15 +374,28 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-8"
           >
-            <div className="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
-              <span className="text-sm font-mono tracking-widest text-white/70 uppercase">Visão Estratégica</span>
+            <div className="flex items-center justify-center gap-6 mb-12">
+              <motion.img 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                src={logoASI} alt="Logo ASI" className="h-16 md:h-24 w-auto drop-shadow-2xl" 
+              />
+              <div className="h-12 w-[1px] bg-white/20" />
+              <motion.img 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                src={logoBV} alt="Logo BV" className="h-12 md:h-16 w-auto drop-shadow-2xl mt-2" 
+              />
             </div>
+            
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6">
-              Clube ASI <br/>
-              <span className="text-gradient-gold">& Banco BV</span>
+              <span className="text-gradient-asi">Clube ASI</span> <br/>
+              <span className="text-gradient-bv">& Banco BV</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mx-auto">
-              Uma aliança para ativar, reter e monetizar o proprietário de veículo.
+              Apresentação Estratégica: Transformando a jornada do cliente em valor perpétuo.
             </p>
           </motion.div>
 
@@ -380,18 +405,17 @@ export default function Home() {
             transition={{ duration: 1, delay: 1 }}
             className="absolute bottom-12 flex flex-col items-center gap-4"
           >
-            <span className="text-sm text-white/40 font-mono tracking-widest uppercase">Role para iniciar</span>
+            <span className="text-sm text-white/40 font-mono tracking-widest uppercase">Explore a Oportunidade</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <ChevronDown className="text-[#F0B90B]" size={24} />
+              <ChevronDown className="text-[#3ED1F4]" size={24} />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Slides */}
       {slides.map((slide, i) => (
         <Slide key={slide.id} data={slide} index={i} total={slides.length} />
       ))}
