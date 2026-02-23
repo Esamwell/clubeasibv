@@ -26,8 +26,8 @@ const slides = [
     id: 1,
     title: "Contexto",
     subtitle: "Auto Shopping como ecossistema",
-    content: "O Auto Shopping Itapoan não é apenas um ponto de venda. É um ambiente que concentra fluxo constante de compradores e proprietários de veículos, criando um ciclo contínuo de oportunidades comerciais e financeiras.",
-    highlight: "Aqui você ancora autoridade e escala.",
+    content: "O Auto Shopping Itapoan opera como um ecossistema de negócios, concentrando fluxo recorrente de compradores e proprietários de veículos. Esse ambiente cria oportunidades contínuas, tanto comerciais quanto financeiras.",
+    highlight: "Cada comprador de veículo representa múltiplas oportunidades financeiras ao longo do tempo.",
     icon: Building2,
     bg: shoppingImg
   },
