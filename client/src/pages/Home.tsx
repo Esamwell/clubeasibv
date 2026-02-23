@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { 
   Building2, 
@@ -367,7 +367,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />
         </motion.div>
 
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -390,12 +390,13 @@ export default function Home() {
               />
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6">
-              <span className="text-gradient-asi">Clube ASI</span> <br/>
-              <span className="text-gradient-bv">& Banco BV</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
+              <span className="text-gradient-asi">Clube de Benefício ASI</span> <br/>
+              <span className="text-white">Proposta de Parceria Estratégica – </span>
+              <span className="text-gradient-bv">Banco BV</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mx-auto">
-              Apresentação Estratégica: Transformando a jornada do cliente em valor perpétuo.
+            <p className="text-xl md:text-3xl text-white/90 font-medium max-w-3xl mx-auto mt-8 mb-4">
+              Plataforma de ativação e relacionamento com clientes pós compra do Auto Shopping Itapoan.
             </p>
           </motion.div>
 
