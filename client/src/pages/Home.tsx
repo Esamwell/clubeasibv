@@ -162,7 +162,6 @@ const slides = [
   {
     id: 12,
     title: "Diferença Competitiva",
-    subtitle: "Argumento de diretoria",
     content: "Enquanto outras instituições atuam apenas no momento da transação, o Banco BV passa a integrar um modelo de relacionamento contínuo com o cliente ao longo de toda a vida útil do veículo.",
     highlight: "O Banco BV deixa de disputar transações e passa a construir ciclo de relacionamento.",
     icon: ShieldCheck,
