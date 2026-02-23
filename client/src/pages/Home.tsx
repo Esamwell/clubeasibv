@@ -79,7 +79,6 @@ const slides = [
   {
     id: 6,
     title: "Ciclo Financeiro",
-    subtitle: "Raciocínio que banco adora",
     content: "O proprietário de veículo naturalmente transita por múltiplos eventos financeiros ao longo do tempo:",
     list: [
       "Financiamento ou refinanciamento",
